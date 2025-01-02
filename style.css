@@ -1,0 +1,725 @@
+@charset "UTF-8";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: Helvetica, HiraKakuProN-W3, meiryo, メイリオ, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    color: #424242;
+    overflow-x: hidden;
+}
+
+body.fixed {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* 共通パーツ */
+.wrapper {
+    width: 100%;
+    max-width: 572px;
+    margin: 0 auto;
+}
+
+.inner {
+    width: 94%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.section_ttl {
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+/* ヘッダー */
+.header {
+    background: #ffffff;
+}
+
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.header_logo {
+    width: 120px;
+}
+
+.toricolon {
+    width: 30px;
+    font-size: 20px;
+    margin: auto 0;
+}
+
+.catch_videoBox {
+    width: 100%;
+}
+
+.catch_video {
+    width: 100%;
+}
+
+.catch_video_ttl {
+    font-size: 18px;
+}
+
+.catch_video_view {
+    font-size: 14px;
+    color: rgb(98, 98, 98);
+}
+
+.catch_bottomBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #b9b9b9;
+    padding: 0 10px 8px;
+    margin-top: 10px;
+}
+
+.catch_bottomBox_left {
+    display: flex;
+}
+
+.catch_userico {
+    margin-right: 5px;
+}
+
+.catch_userico img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #333;
+}
+
+.catch_bottomBox_left p {
+    font-size: 14px;
+}
+
+.catch_bottomBox_left p+p {
+    font-size: 12px;
+}
+
+.catch_bottomBox_right {
+    display: flex;
+}
+
+.bottomBox_right_inner {
+    text-align: center;
+    margin-right: 10px;
+}
+
+.bottomBox_right_inner p {
+    font-size: 12px;
+}
+
+.bottomBox_right_inner i {
+    font-size: 20px;
+}
+
+/* アプリインストール箇所 */
+.apBox_inner {
+    display: flex;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.apBox_apico {
+    width: 80px;
+}
+
+.apBox_right {
+    width: 80%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.apBox_apname {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.apBox_aptext {
+    font-size: 12px;
+}
+
+.apBox_btn {
+    background: rgb(20, 121, 255);
+    border-radius: 30px;
+    width: 85px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.apBox_btn a {
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+
+/* もっと見る */
+.readmore {
+    position: relative;
+    padding: 10px 30px;
+    border-bottom: 2px solid #b9b9b9;
+    font-size: 14px;
+}
+
+.readmore-content {
+    position: relative;
+    overflow: hidden;
+    /*ボックスの高さ*/
+    height: 70px;
+    font-size: 13px;
+}
+
+.readmore-content02,
+.readmore-content03,
+.readmore-content04,
+.readmore-content05 {
+    margin-top: 15px;
+}
+
+.readmore-content04_list,
+.readmore-content05_list {
+    font-size: 12px;
+}
+
+.readmore-content04_list li,
+.readmore-content05_list li {
+    list-style-type: disc;
+    /* リストの左側に黒丸 */
+    margin-left: 24px;
+    /* リストの左側に余白 */
+    text-align: left;
+}
+
+.readmore-content::before {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: "";
+    /*グラデーションの色と高さ 高さはreadmoreのheight以下にすること*/
+    height: 50px;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 50%, #fff 100%);
+    background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 50%, #fff 100%);
+}
+
+/* 続きを読むボタン */
+.readmore-label {
+    display: table;
+    position: absolute;
+    bottom: 5px;
+    left: 65px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    color: rgb(98, 98, 98);
+    font-size: 14px;
+}
+
+.readmore-label:before {
+    content: '続きを読む';
+}
+
+.readmore-check {
+    display: none;
+}
+
+/*チェック時にボタンを非表示*/
+.readmore-check:checked~.readmore-label {
+    position: static;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    /* 「続きを読む」を押した後、元に戻す必要がない場合は、上のオプションを消してこの1行だけにする */
+    /* display: none; */
+}
+
+.readmore-check:checked~.readmore-label:before {
+    content: '閉じる';
+    display: block;
+    margin-top: 10px;
+}
+
+/*チェック時に高さを自動に戻す*/
+.readmore-check:checked~.readmore-content {
+    height: auto;
+}
+
+/*チェック時グラデーション等を削除*/
+.readmore-check:checked~.readmore-content::before {
+    display: none;
+}
+
+/* 人気投稿 */
+.articleBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.articleBox:nth-of-type(n+2) {
+    margin-top: 10px;
+}
+
+.article_left {
+    width: 46%;
+    position: relative;
+}
+
+.article_left p {
+    font-size: 8px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #333;
+    color: #fff;
+    border-radius: 1px;
+    padding: 0 2px;
+}
+
+.articleBox_video {
+    width: 100%;
+}
+
+.article_right {
+    width: 52%;
+    line-height: 1em;
+}
+
+.article_right_text {
+    font-size: 14px;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.article_right_inner {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    align-items: flex-end;
+}
+
+.article_right_name {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.article_right_view {
+    font-size: 12px;
+}
+
+.article_right_tag {
+    display: inline-block;
+    font-size: 12px;
+    border: 1px solid rgb(255, 62, 62);
+    color: rgb(255, 62, 62);
+    line-height: 1.5em;
+    width: 45px;
+    height: 20px;
+    text-align: center;
+}
+
+.link_btn {
+    width: 100%;
+    text-align: center;
+}
+
+.link_btn a {
+    display: block;
+    border: 1px solid rgb(20, 121, 255);
+    padding: 6px 0;
+    color: rgb(20, 121, 255);
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.apBox_outer {
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* ヴァーティカル */
+.vertical_Box {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    position: relative;
+}
+
+.vertical_Box01 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0005.jpg);
+}
+
+.vertical_Box02 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0002.jpg);
+}
+
+.vertical_Box03 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0003.jpg);
+}
+
+.vertical_Box04 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0004.jpg);
+}
+
+.vertical_Box05 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0001.jpg);
+}
+
+.vertical_textBox,
+.Popup_bottom {
+    position: absolute;
+    bottom: 0;
+    font-size: 14px;
+    color: #fff;
+    width: 100%;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.vertical_text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.vertical_name {
+    font-size: 12px;
+}
+
+/* ヴァーティカル・タップ時 */
+.bg01,
+.bg02,
+.bg03,
+.bg04,
+.bg05 {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1000;
+}
+
+.bg01 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0005.jpg);
+}
+
+.bg02 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0002.jpg);
+    background-position: right;
+}
+
+.bg03 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0003.jpg);
+}
+
+.bg04 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0004.jpg);
+}
+
+.bg05 {
+    background-image: url(https://img-storage.com/lp/2021/h_n/ichiroku_tube/item/v_0001.jpg);
+}
+
+.bg01::before,
+.bg02::before,
+.bg03::before,
+.bg04::before,
+.bg05::before,
+.vertical_Box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: brightness(75%);
+    /* 最背面へ */
+    z-index: -1;
+}
+
+.vertical_Box::before {
+    filter: brightness(83%);
+    z-index: 0;
+}
+
+.arrow {
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+}
+
+.video_mark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit- transform: translateY(-50%) translateX(-50%);
+    font-size: 70px;
+    color: #fff;
+}
+
+.Popup_bottom {
+    background: rgba(51, 51, 51, 0.589);
+    font-size: 18px;
+    padding: 10px;
+}
+
+.Popup_name {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* コメント欄 */
+.commentBox_outer {
+    border-bottom: 1px solid #e3e3e3;
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
+
+.commentBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.commentBox2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.commentBox_userico,
+.commentBox_userico2 {
+    margin-right: 7px;
+}
+
+.commentBox_userico img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.commentBox_userico2 img {
+    width: 35px;
+    border-radius: 50%;
+}
+
+.commentBox_right {
+    width: 88%;
+}
+
+.commentBox_right2 {
+    width: 88%;
+}
+
+.commentBox_username {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.commentBox_username span {
+    font-weight: normal;
+    color: rgb(98, 98, 98);
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.commentBox_text {
+    font-size: 14px;
+}
+
+.commentBox_bottom {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.commentBox_bottom2 {
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.commentBox_bottom2 .bad {
+    margin-left: 10px;
+}
+
+.commentBox_bottom .bad {
+    margin-left: 10px;
+}
+
+.commentBox_bottom3 .bad {
+    margin-left: 10px;
+}
+
+.commentBox_bottom_number {
+    font-size: 12px;
+    color: rgb(98, 98, 98);
+}
+
+.comment_sec_btn {
+    width: 100%;
+    text-align: center;
+}
+
+.comment_sec_btn a {
+    display: block;
+    border: 1px solid rgb(20, 121, 255);
+    padding: 6px 0;
+    color: rgb(20, 121, 255);
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* 返信表示 */
+.readmore2,
+.readmore3 {
+    position: relative;
+    padding: 0 0 10px 40px;
+    font-size: 14px;
+}
+
+.readmore-content2,
+.readmore-content3 {
+    position: relative;
+    overflow: hidden;
+    /*ボックスの高さ*/
+    height: 20px;
+}
+
+.readmore-content2::before,
+.readmore-content3::before {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: "";
+    /*グラデーションの色と高さ 高さはreadmoreのheight以下にすること*/
+    height: 20px;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 50%, #fff 100%);
+    background: linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 50%, #fff 100%);
+}
+
+/* 続きを読むボタン */
+.readmore-label2,
+.readmore-label3 {
+    display: table;
+    position: absolute;
+    bottom: 5px;
+    left: 75px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    color: rgb(98, 98, 98);
+    font-size: 14px;
+}
+
+.readmore-label2:before,
+.readmore-label3:before {
+    content: '返信を表示';
+    color: rgb(20, 121, 255);
+}
+
+.readmore-check2,
+.readmore-check3 {
+    display: none;
+}
+
+/*チェック時にボタンを非表示*/
+.readmore-check2:checked~.readmore-label2,
+.readmore-check3:checked~.readmore-label3 {
+    position: static;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    /* 「続きを読む」を押した後、元に戻す必要がない場合は、上のオプションを消してこの1行だけにする */
+    /* display: none; */
+}
+
+.readmore-check2:checked~.readmore-label2:before,
+.readmore-check3:checked~.readmore-label3:before {
+    content: '閉じる';
+    display: block;
+    margin-top: 10px;
+}
+
+/*チェック時に高さを自動に戻す*/
+.readmore-check2:checked~.readmore-content2,
+.readmore-check3:checked~.readmore-content3 {
+    height: auto;
+}
+
+/*チェック時グラデーション等を削除*/
+.readmore-check2:checked~.readmore-content2::before,
+.readmore-check3:checked~.readmore-content3::before {
+    display: none;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0 0;
+    background: rgb(238, 238, 238);
+    margin-top: 20px;
+}
+
+.contact_box {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.contact_box a {
+    display: block;
+    border-radius: 20px;
+    padding: 3px;
+    background: #929292;
+    color: #fff;
+    font-size: 14px;
+}
+
+.small {
+    margin-top: 10px;
+}
+
+/* PR */
+.nx_pr {
+    color: #ddd;
+    background: #555;
+    font-size: 14px;
+    padding: 5px 0;
+    text-align: center;
+}
+
+/* 320px以下 */
+/* @media screen and (max-width:320px) */
