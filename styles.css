@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+.background-image {
+    background-image: url('your-image-url.jpg'); /* ここにぼかし画像のURLを入れてください */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1; /* 背景を最背面に配置 */
+}
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
