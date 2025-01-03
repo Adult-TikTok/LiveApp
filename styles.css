@@ -9,7 +9,8 @@ body, html {
 }
 
 .background-image {
-    background-image: url('220619003-1.jpg'); /* ここにぼかし画像のURLを入れてください */
+/*     background-image: url('220619003-1.jpg'); /* ここにぼかし画像のURLを入れてください */ */
+    background-image: src('220619003-1.jpg');
     background-size: cover;
     background-position: center;
     filter: blur(8px);
