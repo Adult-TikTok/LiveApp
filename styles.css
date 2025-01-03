@@ -9,7 +9,7 @@ body, html {
 }
 
 .background-image {
-    background-image: url('icon01.jpg'); /* ここにぼかし画像のURLを入れてください */
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Ferogazou.gallery%2F%25E6%258A%259C%25E3%2581%2591%25E3%2582%258B%25E3%2582%25A8%25E3%2583%25AD%25E7%2594%25BB%25E5%2583%258F%25E9%259B%2586%2F54454&psig=AOvVaw03q2CdyOdGwYaGzmABoCz_&ust=1735948842946000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDNzcKf2IoDFQAAAAAdAAAAABAE'); /* ここにぼかし画像のURLを入れてください */
     background-size: cover;
     background-position: center;
     filter: blur(8px);
